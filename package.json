@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "domain": "echo automato.site > ./dist/CNAME",
+    "build": "vite build && npm run domain",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "gh-pages": "gh-pages --dist dist --branch master",
+    "deploy": "npm run build && npm run gh-pages"
   },
   "dependencies": {
     "vue": "^3.2.45",
@@ -17,8 +20,10 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "@vue/eslint-config-prettier": "^7.0.0",
+    "bootstrap": "^5.2.3",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
+    "gh-pages": "^5.0.0",
     "prettier": "^2.7.1",
     "vite": "^4.0.0"
   }
