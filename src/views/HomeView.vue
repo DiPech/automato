@@ -1,11 +1,13 @@
 <script setup>
+import BannerBlock from "../components/home/BannerBlock.vue";
+import FeaturesBlock from "../components/home/FeaturesBlock.vue";
 </script>
 
 <template>
-  <main>
-    <div class="home">
-      <h1>This is a home page</h1>
-      <p>Home page is awesome</p>
-    </div>
-  </main>
+  <div>
+    <BannerBlock />
+    <FeaturesBlock />
+  </div>
 </template>
+
+<style scoped></style>
