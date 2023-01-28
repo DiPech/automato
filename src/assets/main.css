@@ -5,6 +5,7 @@ html {
 }
 
 body {
+  position: relative;
   margin-top: var(--header-height);
   min-height: 100vh;
   color: var(--color-text);

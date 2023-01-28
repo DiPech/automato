@@ -1,5 +1,6 @@
 <script setup>
-import { reactive, computed } from "vue";
+import { reactive } from "vue";
+import FeatureBlock from "@/components/home/features/FeatureBlock.vue";
 
 import modesGif from "@/assets/gifs/modes.gif";
 import settingsGif from "@/assets/gifs/settings.gif";
@@ -13,24 +14,25 @@ import fastPostponeGif from "@/assets/gifs/fast-postpone.gif";
 import stopForGif from "@/assets/gifs/stop-for.gif";
 import customPostponeGif from "@/assets/gifs/custom-postpone.gif";
 import skipButtonGif from "@/assets/gifs/skip-button.gif";
+import accessibilityHelperGif from "@/assets/gifs/accessibility-helper.gif";
 
 let gutter = 40;
+let focusedFeature = reactive({ data: null });
 let features = reactive([
   {
     title: "Profiles",
     image: profilesGif,
     preview: "Create profiles and switch between them in a blink of an eye.",
     description: `
-You can define as many profiles as you want. Each profile stores almost every setting from the Settings page.
-When you have more than one profile, then a button for fast profiles switching appears in the top-left corner of the popover.
+You can define as many profiles as you want. Almost every setting from the Settings page can be controlled by a profile.
+When you have more than one profile, a button for fast profiles switching appears in the top-left corner of the popover.
 
-By creating and using new profiles, you can instantly change application settings. 
+By creating and using new profiles, you can instantly change application settings.
 For example, you may have <b>"Sitting"</b> and <b>"Standing"</b> and <b>"Silent"</b> profiles.
 The first has standard (25/5) timing settings. The second has extended timings (40/10).
-The third doesn't play any sounds for notifying the user.
+The third doesn't play any sounds for notifying the user. 
     `,
     isLarge: false,
-    isFocused: false,
   },
   {
     title: "Rich settings, ultimate customization",
@@ -39,10 +41,49 @@ The third doesn't play any sounds for notifying the user.
     description: `
 Automato is a very flexible application. You can see lots of different configurable parameters in the Settings page.
 
-Description for every setting will be described later.
+<h2>Profile switcher</h2>
+
+There's a top level controls group which allows to you manipulate application profiles. Here you can create, remove or select profiles.
+When a profile is selected, almost all the settings you see are stored under this profile.
+<b>Reset to defaults</b> resets almost all the settings but only for the current active profile.
+
+<h2>Common settings tab</h2>
+
+<b>Work Phase time</b> and <b>Walk Phase time</b> are the main setting for configure working and resting time intervals.
+<b>Sound volume</b> setting applied to all sounds played by the app in all phases.
+<b>End of Work phase sound</b> and <b>End of Walk phase sound</b> controls allow you to change melodies or even disable them by selecting the <code>"--- Not selected ---"</code> dropdown option.
+
+<h2>Automation settings tab</h2>
+
+<i>Note: Focus and Overwork phases are only when Automato is in the "Auto" mode!</i>
+
+<b>Focus Phase time</b> setting allows you to set a time interval during which the application expects from you making persistent activity.
+The Focus Phase precedes the Working Phase and the main purpose is to prevent accidental activation of the Working Phase.
+For example, if you accidentally pressed any key or moved the mouse, then the Focus Phase starts, but if no activity will be shown during the next 5 seconds, then the timer will be reset back.
+
+The Overwork Phase starts right after the Work Phase finishes. Automato immediately notifies you about the end of the Work Phase and waits you to stop making any activity.
+The <b>Inactivity time to consider you're away</b> setting determines the timeframe you should not to do any activity at all to activate the Walk Phase.
+
+To make Automato fully autonomous, it's suggested to enable these settings as well:
+<b>Start app automatically on system startup</b> and <b>Start timer automatically on application startup</b>.
+
+<h2>Detection settings tab</h2>
+
+<i>Note: All he settings in this tab are only applied when Automato is in the "Auto" mode!</i>
+
+There are settings for two similar scenarios:
+<ul>
+  <li>When no activity has been detected during Work Phase.</li>
+  <li>When persistent activity has been detected during Walk Phase.</li>
+</ul>
+
+In both cases, Automato notifies you about it. If you ignore the notification, Automato performs according measures. 
+For example, if you're still working during Walk Phase, then Automato will turn on the Work Mode with 1 minute left.
+Another axample: if you're not doing anything with the computer during the Work Phase, then Automato will show the popover
+with the notification. If you press any key or move the mouse, touch the touchpad, then Automato will hide the warning. 
+If you ignore the warning, the Focus Phase will be activated.
 `,
     isLarge: true,
-    isFocused: false,
   },
   {
     title: "Three modes",
@@ -51,9 +92,21 @@ Description for every setting will be described later.
       "Start timer manual, or configure autostart, or even allow Automato to decide for you.",
     description: `
 There are three levels of automation to choose from.
+
+<b>Manual mode</b> requires you to start and stop timers manually. This can be useful, when you want to have full control over the application.
+Also manual mode is useful when you learn something from video and not actively interact with the computer (which makes Auto mode not so useful).
+
+<b>Semi-automatic</b> mode is almost the same as <b>Manual mode</b> but here you define timers automaticla start.
+If both toggles are enabled, Work and Walk phases will run one after another in a cycle. 
+All you need is to react when it's time to work and when it's time to rest.
+
+<b>Auto mode</b> is a very advanced mode. It tracks your activity (key presses, mouse movements, touchpad gestures) and starts and stops the timers fully automatically.
+It also can react when you're not active when you should be working, and react when you're active when you should be resting.
+This mode has a wide variety of settings, to tune the application's behaviour according your preferences.
+
+<u>Note that the <b>Auto mode</b> requires the Accessibility permission in the macOS "Security & Privacy" system settings.</u>
 `,
     isLarge: false,
-    isFocused: false,
   },
   {
     title: "Detect inactivity during Work Phase",
@@ -66,7 +119,6 @@ The application automatically in the background detects inactivity (no mouse mov
 See how it looks like in action in the video.
 `,
     isLarge: false,
-    isFocused: false,
   },
   {
     title: "Detect activity during Rest Phase",
@@ -79,7 +131,6 @@ If you ignore the notification, automatical postpone will be activated.
 The postpone event will turn on Work Phase with 1 minute timer left.
 `,
     isLarge: false,
-    isFocused: false,
   },
   {
     title: "Pit-stop for a while",
@@ -90,7 +141,6 @@ The postpone event will turn on Work Phase with 1 minute timer left.
 This allows to stop the application for a given period of time. The timer will be restarted after that period.
 It's very useful for meetings, for gaming sessions, for films watching, or for whatever reason you may want not to be notified by Automato.`,
     isLarge: false,
-    isFocused: false,
   },
   {
     title: "Time rewinding",
@@ -101,7 +151,6 @@ This feature might be convenient when you want to set smaller work session for o
 Or when you want to postpone for a larger period of time rather than 1 minute.
 With this feature you can precisely control the timer value whenever you want it.`,
     isLarge: false,
-    isFocused: false,
   },
   {
     title: "Take a pause",
@@ -115,7 +164,6 @@ which may lead to forgetting pressing the unpause button.
 But if you really need this, we got this tool for you ;)
 `,
     isLarge: false,
-    isFocused: false,
   },
   {
     title: "Add extra time",
@@ -127,7 +175,17 @@ This is where the Postpone button comes handy! This button adds one minute to th
 If you were in Resting Phase, this button will also return you back to the Working Phase.
 `,
     isLarge: false,
-    isFocused: false,
+  },
+  {
+    title: "Accessibility helper",
+    image: accessibilityHelperGif,
+    preview:
+      "Easily grant Accessibility permission if you want to use the Auto mode",
+    description: `
+If you started Automato the first time, and if you want to use the Auto mode, then you need to grant the Accessibility permission. 
+The helper button has been implemented to make this process easier for you. Just press this button and follow the instructions.
+`,
+    isLarge: true,
   },
   {
     title: "Fast postpone",
@@ -137,7 +195,6 @@ If you were in Resting Phase, this button will also return you back to the Worki
 True ninja don't even open the app to postpone the timer! One click – and it's done!
 `,
     isLarge: false,
-    isFocused: false,
   },
   {
     title: "Custom postpone",
@@ -147,89 +204,49 @@ True ninja don't even open the app to postpone the timer! One click – and it's
 Press and hold the OPTION key while clicking to the postpone button.
 `,
     isLarge: false,
-    isFocused: false,
   },
   {
     title: "Skip phases",
     image: skipButtonGif,
     preview: "Just right into the next phase",
     description: `
-Tired already? Skip the work phase and go resting. Rested already? SKip the rest phase and go working.
+Tired already? Skip the Work Phase and start resting. Rested already? Skip the Walk Phase and start working.
 `,
     isLarge: false,
-    isFocused: false,
   },
 ]);
-
-function focusFeature(feature) {
-  feature.isFocused = true;
-}
-
-function hideFocusedFeature() {
-  features.forEach((f) => (f.isFocused = false));
-}
-
-function renderDescription(description) {
-  return description
-    .split("\n\n")
-    .map((str) => "&nbsp;".repeat(3) + str)
-    .join("<br><br>");
-}
-
-const hasFocusedFeature = computed(() => features.find((f) => f.isFocused));
 </script>
 
 <template>
   <main id="features">
-    <div
-      class="focused-feature-fade"
-      v-if="hasFocusedFeature"
-      @click="hideFocusedFeature()"
-    ></div>
+    <template v-if="focusedFeature.data != null">
+      <FeatureBlock
+        v-bind="{ ...focusedFeature.data }"
+        :isFocused="true"
+        @unfocus="focusedFeature.data = null"
+      />
+      <div
+        class="focused-feature-fade"
+        @click="focusedFeature.data = null"
+      ></div>
+    </template>
     <div class="container text-center">
       <h2 class="heading">Features</h2>
       <div
-        v-masonry="containerId"
+        v-masonry
         class="masonry"
-        transition-duration="0.3s"
+        transition-duration="1s"
         fit-width="true"
         item-selector=".masonry-item"
         :gutter="gutter"
       >
-        <div
-          v-masonry-tile
-          class="masonry-item feature"
+        <FeatureBlock
           v-for="(feature, featureIndex) in features"
-          :class="{ large: feature.isLarge, focused: feature.isFocused }"
+          v-bind="{ ...feature }"
           :style="{ 'margin-bottom': gutter + 'px' }"
           :key="featureIndex"
-          @click="focusFeature(feature)"
-        >
-          <div class="title">{{ feature.title }}</div>
-          <template v-if="!feature.isFocused">
-            <div class="image-wrapper">
-              <img :src="feature.image" class="image" />
-            </div>
-            <div class="description">
-              {{ feature.preview }}
-              <br /><span class="link">read more</span>
-            </div>
-          </template>
-          <template v-if="feature.isFocused">
-            <div class="row">
-              <div class="col-sm-6">
-                <div class="image-wrapper">
-                  <img :src="feature.image" class="image" />
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="description text-center text-sm-start">
-                  <span v-html="renderDescription(feature.description)"></span>
-                </div>
-              </div>
-            </div>
-          </template>
-        </div>
+          @focus="focusedFeature.data = feature"
+        />
       </div>
     </div>
   </main>
@@ -241,6 +258,17 @@ const hasFocusedFeature = computed(() => features.find((f) => f.isFocused));
   padding-bottom: 100px;
   background-color: rgb(245, 247, 249);
 }
+@media only screen and (max-width: 600px) {
+  #features {
+    margin-top: 100px;
+    padding-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 440px) {
+  #features {
+    padding-bottom: 10px;
+  }
+}
 .heading {
   display: inline-block;
   margin-top: 50px;
@@ -251,23 +279,6 @@ const hasFocusedFeature = computed(() => features.find((f) => f.isFocused));
 }
 .masonry {
   margin: 0 auto;
-}
-.feature {
-  background-color: white;
-  width: 400px;
-  padding: 1rem 2rem;
-  border: 1px solid rgb(233 234 235);
-  border-radius: 0.75rem;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0/0.1), 0 4px 6px -4px rgb(0 0 0/0.1);
-  cursor: pointer;
-}
-.feature.large {
-  width: 840px;
-}
-@media only screen and (max-width: 1440px) {
-  .feature.large {
-    width: 400px;
-  }
 }
 .focused-feature-fade {
   z-index: 998;
@@ -285,66 +296,5 @@ const hasFocusedFeature = computed(() => features.find((f) => f.isFocused));
   cursor: pointer;
   overflow-y: hidden;
   overscroll-behavior: contain;
-}
-.feature.focused {
-  z-index: 999;
-  position: fixed !important;
-  width: 90% !important;
-  height: auto !important;
-  max-height: 90%;
-  left: 5% !important;
-  top: 5% !important;
-  cursor: auto;
-  overflow-y: auto;
-  overscroll-behavior: contain;
-}
-.feature .title {
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 2rem;
-}
-.feature.focused .title {
-  font-size: 2.5rem;
-  line-height: 2.5rem;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.feature .image {
-  margin-top: 20px;
-  width: 100%;
-  border-radius: 5px;
-}
-.feature .description {
-  margin-top: 10px;
-  display: inline-block;
-  width: 100%;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  color: rgb(60, 65, 70);
-}
-.feature.focused .image {
-  width: auto;
-  max-width: 100%;
-  max-height: 550px;
-  margin-bottom: 15px;
-}
-.feature.focused .description {
-  margin-top: 15px;
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-}
-.feature .link {
-  color: rgb(4, 105, 255);
-  font-style: italic;
-  text-decoration: none;
-}
-.feature .link:hover {
-  text-decoration: underline;
-}
-@media only screen and (max-width: 440px) {
-  .feature {
-    width: 100% !important;
-    margin-bottom: 10px !important;
-  }
 }
 </style>
