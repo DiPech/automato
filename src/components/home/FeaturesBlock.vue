@@ -225,10 +225,6 @@ Tired already? Skip the Work Phase and start resting. Rested already? Skip the W
         :isFocused="true"
         @unfocus="focusedFeature.data = null"
       />
-      <div
-        class="focused-feature-fade"
-        @click="focusedFeature.data = null"
-      ></div>
     </template>
     <div class="container text-center">
       <h2 class="heading">Features</h2>
@@ -279,22 +275,5 @@ Tired already? Skip the Work Phase and start resting. Rested already? Skip the W
 }
 .masonry {
   margin: 0 auto;
-}
-.focused-feature-fade {
-  z-index: 998;
-  display: block;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  /* background-color: gray; */
-  opacity: 0.8;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
-  cursor: pointer;
-  overflow-y: hidden;
-  overscroll-behavior: contain;
 }
 </style>
