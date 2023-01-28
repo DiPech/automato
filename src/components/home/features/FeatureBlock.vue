@@ -39,14 +39,20 @@ const emit = defineEmits(["focus", "unfocus"]);
       </div>
     </template>
     <template v-if="isFocused">
-      <div class="modal-wrapper">
+      <div class="modal-wrapper" @click.self="emit('unfocus')">
         <div class="modal-body">
           <div class="title">{{ title }}</div>
           <img :src="closeImg" class="button-close" @click="emit('unfocus')" />
           <div class="body-wrapper">
-            <img :src="image" class="image" />
-            <div class="description">
-              <span v-html="processedDescription"></span>
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <img :src="image" class="image" />
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="description">
+                  <span v-html="processedDescription"></span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -57,7 +63,7 @@ const emit = defineEmits(["focus", "unfocus"]);
 
 <style scoped>
 .modal-wrapper {
-  z-index: 998;
+  z-index: 990;
   position: fixed !important;
   display: block;
   left: 0;
@@ -66,12 +72,14 @@ const emit = defineEmits(["focus", "unfocus"]);
   height: 100%;
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(32px);
-  -webkit-backdrop-filter: blur(32px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   overflow-y: scroll;
   overscroll-behavior: contain;
+  cursor: pointer;
 }
 .modal-body {
+  z-index: 999;
   background-color: white;
   width: calc(100% - 100px);
   height: auto;
@@ -79,7 +87,6 @@ const emit = defineEmits(["focus", "unfocus"]);
   top: 50px;
   margin-bottom: 100px;
   opacity: 1;
-  z-index: 999;
   cursor: auto;
   border-radius: 0.75rem;
   padding: 1rem 2rem;
@@ -135,8 +142,6 @@ const emit = defineEmits(["focus", "unfocus"]);
     text-align: center;
   }
 }
-@media only screen and (max-width: 600px) {
-}
 .feature .title {
   font-weight: 700;
   font-size: 1.5rem;
@@ -162,10 +167,7 @@ const emit = defineEmits(["focus", "unfocus"]);
   color: rgb(60, 65, 70);
 }
 .feature.focused .image {
-  display: inline;
-  width: auto;
-  max-width: 40%;
-  float: left;
+  display: inline-block;
   margin-right: 40px;
   margin-bottom: 20px;
 }

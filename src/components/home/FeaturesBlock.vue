@@ -192,7 +192,7 @@ The helper button has been implemented to make this process easier for you. Just
     image: fastPostponeGif,
     preview: "Ultra-fast extra time by one click!",
     description: `
-True ninja don't even open the app to postpone the timer! One click – and it's done!
+True ninja don't even open the app to postpone the timer! One click with right mouse button – and it's done!
 `,
     isLarge: false,
   },
