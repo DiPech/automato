@@ -13,7 +13,6 @@ window.onscroll = () => {
   isVisible.value = window.scrollY > 600;
   if (prevIsVisible.value != isVisible.value) {
     renderKey.value = Math.random();
-    console.log("Rerender!");
   }
 };
 </script>
@@ -43,9 +42,6 @@ window.onscroll = () => {
         </a>
       </div>
     </nav>
-    <div style="position: fixed; bottom: 0; z-index: 999999">
-      {{ isVisible ? "VISIBLE" : "NOT VISIBLE" }}
-    </div>
   </header>
 </template>
 

@@ -17,9 +17,10 @@ const downloadUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
           The app requires no effort, it starts and stops automatically,<br />
           and notifies you only when time comes.
         </p>
-        <a :href="downloadUrl">
+        <Popper content="Unfortunately, Automato is not published yet 😢" :arrow="true" 
+                class="btn-download-popper">
           <img class="btn-download" src="@/assets/button-download.svg" />
-        </a>
+        </Popper>
       </div>
     </div>
   </main>
@@ -72,5 +73,10 @@ const downloadUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
 .btn-download {
   margin-top: 30px;
   height: 64px;
+  cursor: pointer;
+}
+.btn-download-popper:deep() * {
+  font-weight: 700;
+  font-size: 1.3rem;
 }
 </style>

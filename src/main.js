@@ -1,7 +1,8 @@
 import { createApp } from "vue";
 import { VueMasonryPlugin } from "vue-masonry";
+import Popper from "vue3-popper";
 import App from "./App.vue";
-import router from "./router";
+import Router from "./router";
 
 import "bootstrap";
 
@@ -10,7 +11,8 @@ import "./assets/main.css";
 
 const app = createApp(App);
 
-app.use(router);
+app.use(Popper);
+app.use(Router);
 app.use(VueMasonryPlugin);
 
 app.mount("#app");
