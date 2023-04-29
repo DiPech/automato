@@ -1,5 +1,5 @@
 <script setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 import FeatureBlock from "@/components/home/features/FeatureBlock.vue";
 
 import modesGif from "@/assets/gifs/modes.gif";
@@ -17,6 +17,7 @@ import skipButtonGif from "@/assets/gifs/skip-button.gif";
 import accessibilityHelperGif from "@/assets/gifs/accessibility-helper.gif";
 
 let gutter = 40;
+let showAllFeatures = ref(false);
 let focusedFeature = reactive({ data: null });
 let features = reactive([
   {
@@ -208,17 +209,21 @@ Press and hold the OPTION key while clicking to the postpone button.
   {
     title: "Skip phases",
     image: skipButtonGif,
-    preview: "Just right into the next phase",
+    preview: "Just straight into the next phase",
     description: `
 Tired already? Skip the Work Phase and start resting. Rested already? Skip the Walk Phase and start working.
 `,
     isLarge: false,
   },
 ]);
+
+function getFeatures() {
+  return showAllFeatures.value ? features : features.slice(0, 3);
+}
 </script>
 
 <template>
-  <main id="features">
+  <section class="section" id="section-features">
     <template v-if="focusedFeature.data != null">
       <FeatureBlock
         v-bind="{ ...focusedFeature.data }"
@@ -237,31 +242,39 @@ Tired already? Skip the Work Phase and start resting. Rested already? Skip the W
         :gutter="gutter"
       >
         <FeatureBlock
-          v-for="(feature, featureIndex) in features"
+          v-for="(feature, featureIndex) in getFeatures()"
           v-bind="{ ...feature }"
           :style="{ 'margin-bottom': gutter + 'px' }"
           :key="featureIndex"
           @focus="focusedFeature.data = feature"
         />
       </div>
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-lg"
+        :class="{ 'd-none': showAllFeatures }"
+        @click="showAllFeatures = true"
+      >
+        Show all features
+      </button>
     </div>
-  </main>
+  </section>
 </template>
 
 <style scoped>
-#features {
-  margin-top: 200px;
+.section {
+  padding-top: 100px;
   padding-bottom: 100px;
   background-color: rgb(245, 247, 249);
 }
 @media only screen and (max-width: 600px) {
-  #features {
+  .section {
     margin-top: 100px;
     padding-bottom: 30px;
   }
 }
 @media only screen and (max-width: 440px) {
-  #features {
+  .section {
     padding-bottom: 10px;
   }
 }

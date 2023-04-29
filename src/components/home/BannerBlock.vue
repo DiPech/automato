@@ -1,21 +1,19 @@
-<script setup>
-const downloadUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-</script>
+<script setup></script>
 
 <template>
-  <main class="container" id="banner">
+  <section class="section" id="section-banner">
     <div class="row">
       <div class="col-4">
         <img src="@/assets/banner.jpg" class="banner-image" />
       </div>
       <div class="col-12 col-md-8 text-center">
-        <img src="@/assets/logo.svg" height="128" class="logo" />
+        <img src="@/assets/logo.png" height="128" class="logo" />
         <h1 class="title">Advanced automated<br />pomodoro timer</h1>
         <p class="subtitle">
           Automato is a pomodoro timer for macOS<br />
           which makes pomodoro technique effortless and inevitable.<br />
           The app requires no effort, it starts and stops automatically,<br />
-          and notifies you only when time comes.
+          notifies when you need to take a break.
         </p>
         <Popper content="Unfortunately, Automato is not published yet 😢" :arrow="true" 
                 class="btn-download-popper">
@@ -23,12 +21,13 @@ const downloadUrl = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
         </Popper>
       </div>
     </div>
-  </main>
+  </section>
 </template>
 
 <style scoped>
-#banner {
+.section {
   position: relative;
+  padding-top: 0;
 }
 .banner-image {
   position: absolute;
