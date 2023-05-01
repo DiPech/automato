@@ -9,6 +9,10 @@ let year = new Date().getFullYear()
       <a href="/privacy.html" target="_blank">
         Privacy policy
       </a>
+      <span class="dot-delimiter">&#8226;</span>
+      <a href="/terms.html" target="_blank">
+        Terms of Service
+      </a>
     </p>
   </section>
 </template>
@@ -29,5 +33,10 @@ let year = new Date().getFullYear()
   text-decoration: none;
   color: black;
   font-weight: 300;
+}
+
+.dot-delimiter {
+  font-size: 14px;
+  color: lightgray;
 }
 </style>
