@@ -1,4 +1,5 @@
-<script setup></script>
+<script setup>
+</script>
 
 <template>
   <section class="section" id="section-banner">
@@ -15,10 +16,9 @@
           The app requires no effort, it starts and stops automatically,<br />
           notifies when you need to take a break.
         </p>
-        <Popper content="Unfortunately, Automato is not published yet 😢" :arrow="true" 
-                class="btn-download-popper">
+        <a href="https://apps.apple.com/eu/app/automato-pomodoro-timer/id6448658235?mt=12" target="_blank">
           <img class="btn-download" src="@/assets/button-download.svg" />
-        </Popper>
+        </a>
       </div>
     </div>
   </section>
