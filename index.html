@@ -1,28 +1,427 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-N6DW4VR');</script>
-    <!-- End Google Tag Manager -->
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automato Pomodoro Timer – the best macOS Pomodoro Timer ever created by human being</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-F75RZKW7ED"></script>
-    <script type="module" crossorigin src="/assets/index-721c005d.js"></script>
-    <link rel="stylesheet" href="/assets/index-10acc2db.css">
-  </head>
-  <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6DW4VR"
-                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <div id="app"></div>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F75RZKW7ED"></script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-N6DW4VR');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automato Pomodoro Timer – the best macOS Pomodoro Timer ever created by human being</title>
+  <link rel="icon" href="/assets/favicon-1705837438.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preload" as="style" href="https://automato.site/build/assets/site-ff737b67.css" /><link rel="modulepreload" href="https://automato.site/build/assets/site-e7362106.js" /><link rel="stylesheet" href="https://automato.site/build/assets/site-ff737b67.css" /><script type="module" src="https://automato.site/build/assets/site-e7362106.js"></script>
+</head>
+<body class="homepage">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6DW4VR"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<header class="sticky">
+  <nav class="navbar navbar-expand-lg navbar-light w-100">
+    <div class="container px-3">
+      <a class="navbar-brand" href="/">
+        <img src="/assets/logo.png" alt="Automato Logo">
+        <h1>Automato</h1>
+      </a>
+      <button class="navbar-toggler offcanvas-nav-btn" type="button"
+              data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <i class="bi bi-list"></i>
+      </button>
+      <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem" id="offcanvasExample">
+        <div class="offcanvas-header">
+          <a href="/" class="text-inverse offcanvas-title">
+            <img src="/assets/logo.png" alt="Automato Logo">
+            <h1>Automato</h1>
+          </a>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body pt-0 align-items-center">
+          <ul class="navbar-nav mx-auto align-items-lg-center">
+            
+              <li class="nav-item">
+                <a class="nav-link " href="/features" role="button">Features</a>
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link " href="/blog" role="button">Blog</a>
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link " href="/faq" role="button">F.A.Q.</a>
+              </li>
+            
+              <li class="nav-item">
+                <a class="nav-link " href="/support" role="button">Support</a>
+              </li>
+            
+          </ul>
+          <div class="mt-3 mt-lg-0 d-flex align-items-center">
+            <a href="https://apps.apple.com/eu/app/automato-pomodoro-timer/id6448658235?mt=12" target="_blank">
+              <img class="btn-download" src="/assets/button-download.svg"
+                   alt=""/>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section class="section" id="section-banner">
+  <div class="row" style="margin-right: 0">
+    <div class="col-4 d-none d-md-block">
+      <img src="/assets/banner.jpg" class="banner-image"
+           alt="Automato Laptop"/>
+    </div>
+    <div class="col-md-8 text-center">
+      <img src="/assets/logo.png" height="128" class="logo"
+           alt="Automato Logo"/>
+      <h1 class="title">Advanced automated<br/>pomodoro timer</h1>
+      <p class="subtitle">
+        Automato is a pomodoro timer for macOS<br/>
+        which makes pomodoro technique effortless and inevitable.<br/>
+        The app requires no effort, it starts and stops automatically,<br/>
+        notifies when you need to take a break.
+      </p>
+      <a href="https://apps.apple.com/eu/app/automato-pomodoro-timer/id6448658235?mt=12" target="_blank">
+        <img class="btn-download" src="/assets/button-download.svg"
+             alt=""/>
+      </a>
+    </div>
+  </div>
+</section>
+<section class="section" id="section-features">
+  <div class="container text-center">
+    <h2 class="heading">Features</h2>
+    <div class="masonry">
+      
+        <div class="masonry-item feature ">
+          <div class="title">Profiles</div>
+          <div class="img-gif-wrapper">
+  <img class="image img-gif-with-preview" src="" data-src="/assets/profiles.gif" alt=""/>
+  <div class="dark-preview">
+    <i data-feather="play-circle" class="btn-play-gif"></i>
+    <i data-feather="loader" class="gif-loader"></i>
+  </div>
+</div>
+
+          <div class="description">
+            Create profiles and switch between them in a blink of an eye
+
+            <br/>
+            <a class="link" href="/features/profiles">read more</a>
+          </div>
+        </div>
+      
+        <div class="masonry-item feature  large ">
+          <div class="title">Rich preferences, ultimate customization</div>
+          <div class="img-gif-wrapper">
+  <img class="image img-gif-with-preview" src="" data-src="/assets/settings.gif" alt=""/>
+  <div class="dark-preview">
+    <i data-feather="play-circle" class="btn-play-gif"></i>
+    <i data-feather="loader" class="gif-loader"></i>
+  </div>
+</div>
+
+          <div class="description">
+            Customize every aspect of the application
+
+            <br/>
+            <a class="link" href="/features/preferences">read more</a>
+          </div>
+        </div>
+      
+        <div class="masonry-item feature ">
+          <div class="title">App usage modes</div>
+          <div class="img-gif-wrapper">
+  <img class="image img-gif-with-preview" src="" data-src="/assets/modes.gif" alt=""/>
+  <div class="dark-preview">
+    <i data-feather="play-circle" class="btn-play-gif"></i>
+    <i data-feather="loader" class="gif-loader"></i>
+  </div>
+</div>
+
+          <div class="description">
+            Start timer manual, or configure autostart, or even allow Automato to decide for you
+
+            <br/>
+            <a class="link" href="/features/modes">read more</a>
+          </div>
+        </div>
+      
+        <div class="masonry-item feature ">
+          <div class="title">Detect inactivity during Work Phase</div>
+          <div class="img-gif-wrapper">
+  <img class="image img-gif-with-preview" src="" data-src="/assets/detect-inactivity.gif" alt=""/>
+  <div class="dark-preview">
+    <i data-feather="play-circle" class="btn-play-gif"></i>
+    <i data-feather="loader" class="gif-loader"></i>
+  </div>
+</div>
+
+          <div class="description">
+            Be notified if you've been distracted from your work
+
+            <br/>
+            <a class="link" href="/features/detect-inactivity-during-work-phase">read more</a>
+          </div>
+        </div>
+      
+        <div class="masonry-item feature ">
+          <div class="title">Detect activity during Rest Phase</div>
+          <div class="img-gif-wrapper">
+  <img class="image img-gif-with-preview" src="" data-src="/assets/detect-activity.gif" alt=""/>
+  <div class="dark-preview">
+    <i data-feather="play-circle" class="btn-play-gif"></i>
+    <i data-feather="loader" class="gif-loader"></i>
+  </div>
+</div>
+
+          <div class="description">
+            Be notified if you're still working when you're supposed to be resting
+
+            <br/>
+            <a class="link" href="/features/detect-activity-during-rest-phase">read more</a>
+          </div>
+        </div>
+      
+        <div class="masonry-item feature ">
+          <div class="title">Pit-stop for a while</div>
+          <div class="img-gif-wrapper">
+  <img class="image img-gif-with-preview" src="" data-src="/assets/stop-for.gif" alt=""/>
+  <div class="dark-preview">
+    <i data-feather="play-circle" class="btn-play-gif"></i>
+    <i data-feather="loader" class="gif-loader"></i>
+  </div>
+</div>
+
+          <div class="description">
+            Ideally for meetings or if you don't want to be distracted at all
+
+            <br/>
+            <a class="link" href="/features/stop-for-a-while">read more</a>
+          </div>
+        </div>
+      
+        <div class="masonry-item feature ">
+          <div class="title">Time rewinding</div>
+          <div class="img-gif-wrapper">
+  <img class="image img-gif-with-preview" src="" data-src="/assets/rewind-by-click.gif" alt=""/>
+  <div class="dark-preview">
+    <i data-feather="play-circle" class="btn-play-gif"></i>
+    <i data-feather="loader" class="gif-loader"></i>
+  </div>
+</div>
+
+          <div class="description">
+            Easily configure timer's time value if you really need it
+
+            <br/>
+            <a class="link" href="/features/rewind">read more</a>
+          </div>
+        </div>
+      
+        <div class="masonry-item feature ">
+          <div class="title">Take a pause</div>
+          <div class="img-gif-wrapper">
+  <img class="image img-gif-with-preview" src="" data-src="/assets/pause-button.gif" alt=""/>
+  <div class="dark-preview">
+    <i data-feather="play-circle" class="btn-play-gif"></i>
+    <i data-feather="loader" class="gif-loader"></i>
+  </div>
+</div>
+
+          <div class="description">
+            If you really need this ;)
+
+            <br/>
+            <a class="link" href="/features/pause">read more</a>
+          </div>
+        </div>
+      
+        <div class="masonry-item feature ">
+          <div class="title">Add extra time</div>
+          <div class="img-gif-wrapper">
+  <img class="image img-gif-with-preview" src="" data-src="/assets/postpone-button.gif" alt=""/>
+  <div class="dark-preview">
+    <i data-feather="play-circle" class="btn-play-gif"></i>
+    <i data-feather="loader" class="gif-loader"></i>
+  </div>
+</div>
+
+          <div class="description">
+            Still has unfinished chunk of work?
+
+            <br/>
+            <a class="link" href="/features/postpone">read more</a>
+          </div>
+        </div>
+      
+        <div class="masonry-item feature  large ">
+          <div class="title">Accessibility helper</div>
+          <div class="img-gif-wrapper">
+  <img class="image img-gif-with-preview" src="" data-src="/assets/accessibility-helper.gif" alt=""/>
+  <div class="dark-preview">
+    <i data-feather="play-circle" class="btn-play-gif"></i>
+    <i data-feather="loader" class="gif-loader"></i>
+  </div>
+</div>
+
+          <div class="description">
+            Easily grant Accessibility permission if you want to use the Auto mode
+
+            <br/>
+            <a class="link" href="/features/accessibility-helper">read more</a>
+          </div>
+        </div>
+      
+        <div class="masonry-item feature ">
+          <div class="title">Fast postpone</div>
+          <div class="img-gif-wrapper">
+  <img class="image img-gif-with-preview" src="" data-src="/assets/fast-postpone.gif" alt=""/>
+  <div class="dark-preview">
+    <i data-feather="play-circle" class="btn-play-gif"></i>
+    <i data-feather="loader" class="gif-loader"></i>
+  </div>
+</div>
+
+          <div class="description">
+            Ultra-fast extra time by one click!
+
+            <br/>
+            <a class="link" href="/features/fast-postpone">read more</a>
+          </div>
+        </div>
+      
+        <div class="masonry-item feature ">
+          <div class="title">Custom postpone</div>
+          <div class="img-gif-wrapper">
+  <img class="image img-gif-with-preview" src="" data-src="/assets/custom-postpone.gif" alt=""/>
+  <div class="dark-preview">
+    <i data-feather="play-circle" class="btn-play-gif"></i>
+    <i data-feather="loader" class="gif-loader"></i>
+  </div>
+</div>
+
+          <div class="description">
+            Another handy way to postpone the timer
+
+            <br/>
+            <a class="link" href="/features/custom-postpone">read more</a>
+          </div>
+        </div>
+      
+        <div class="masonry-item feature ">
+          <div class="title">Skip phases</div>
+          <div class="img-gif-wrapper">
+  <img class="image img-gif-with-preview" src="" data-src="/assets/skip-button.gif" alt=""/>
+  <div class="dark-preview">
+    <i data-feather="play-circle" class="btn-play-gif"></i>
+    <i data-feather="loader" class="gif-loader"></i>
+  </div>
+</div>
+
+          <div class="description">
+            Just straight into the next phase
+
+            <br/>
+            <a class="link" href="/features/skip">read more</a>
+          </div>
+        </div>
+      
+    </div>
+  </div>
+</section>
+<section class="section" id="section-scheme">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2>This is how Automato works</h2>
+        <img src="/assets/schema.png" alt="Automato Schema"/>
+      </div>
+      <div class="col-12 col-md-8 offset-md-2">
+        <ol>
+          <li>
+            <b>Focus phase</b> is the first phase which starts after you launch the app. This phase is typically short
+            and take 15 seconds.
+            During this phase Automato checks if you actively doing something on your computer. And in case if you do –
+            Automato switches to the next phase.
+            But if not, then you return to the start. This phase is needed to prevent accidentally timer starts (hello
+            to cats walking on a keyboard).
+          </li>
+          <li>
+            <b>Work phase</b> is the main phase during which you actively work on your computer for 25 minutes (you can
+            configure this interval in the settings).
+            If Automato detects that you are not active (e.g. not moving your mouse, not typing anything, not scrolling,
+            and so on) then it notifies you first,
+            then (after some time) you will be returned back to the <u>Focus phase</u>.
+          </li>
+          <li>
+            25 minutes went by and now you need to take a break. To be sure that you really stopped working, Automato
+            transitions to the <b>Overwork Phase</b>.
+            This is the shortest phase, but it's very crucial. During this phase, Automato notifies you (by playing
+            music and sending notifications) that you should stop
+            working and take a break (it means, not typing, not moving your mouse, not scrolling, and so on). And when
+            it happens, Automato switches to the next phase.
+          </li>
+          <li>
+            Consider doing something useful and physically active during the <b>Rest Phase</b>, for example, you can go
+            to the kitchen and drink some water, or do 10 squats.
+            During this phase Automato detects if you do some activity on your computer. If you do, then Automato
+            notifies you first, then
+            (after some consistent activity time during Rest Phase) the timer will be postponed, which means you will be
+            returned back to the <u>Work Phase</u> with
+            <code>01:00</code> remaining time. But if you diligently rested for 5 minutes, then it means you returned
+            back to <u>Focus Phase</u> (and the cycle starts again).
+            Automato plays a sound when transitioning to the Focus phase, so most likely won't miss that moment.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section" id="section-contacts">
+  <div class="container">
+    <h2 class="text-center mb-4" id="contacts-and-support">
+      Contacts and Support
+    </h2>
+    <p class="text-center">
+      If you have any questions regarding Automato – please write to this email:<br>
+<a href="mailto:dmitrii.pechkovskii.tsikorin@gmail.com">dmitrii.pechkovskii.tsikorin@gmail.com</a>.<br>
+We typically respond within 48 hours and will be glad to help you!
+
+    </p>
+  </div>
+</section>
+<section class="section" id="section-footer">
+  <p>Automato, 2024</p>
+  <p class="legal-links">
     
-  </body>
+      <a href="/policies/website/privacy-policy" target="_blank">Privacy policy</a>
+      
+      <span class="dot-delimiter">&#8226;</span>
+      
+    
+      <a href="/policies/website/terms-of-service" target="_blank">Terms of service</a>
+      
+      <span class="dot-delimiter">&#8226;</span>
+      
+    
+      <a href="/policies/website/cookie-policy" target="_blank">Cookie policy</a>
+      
+    
+  </p>
+</section>
+
+
+</body>
 </html>
