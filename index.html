@@ -115,7 +115,7 @@
 </div>
 
           <div class="description">
-            Create profiles and switch between them in a blink of an eye
+            Effortlessly create profiles and switch between them in an instant.
 
             <br/>
             <a class="link" href="/features/profiles">read more</a>
@@ -151,7 +151,7 @@
 </div>
 
           <div class="description">
-            Start timer manual, or configure autostart, or even allow Automato to decide for you
+            Initiate the timer manually, set it to auto-start, or let Automato make the decision on your behalf
 
             <br/>
             <a class="link" href="/features/modes">read more</a>
@@ -159,7 +159,7 @@
         </div>
       
         <div class="masonry-item feature ">
-          <div class="title">Detect inactivity during Work Phase</div>
+          <div class="title">Detect inactivity during the Work Phase</div>
           <div class="img-gif-wrapper">
   <img class="image img-gif-with-preview" src="/img/containers/assets/detect-inactivity.gif/0ef90c31de1ba0843c8343402818505f/detect-inactivity.jpg" data-src="/assets/detect-inactivity.gif" alt=""/>
   <div class="dark-preview">
@@ -169,7 +169,7 @@
 </div>
 
           <div class="description">
-            Be notified if you've been distracted from your work
+            Receive alerts in case of deviation from your work tasks
 
             <br/>
             <a class="link" href="/features/detect-inactivity-during-work-phase">read more</a>
@@ -177,7 +177,7 @@
         </div>
       
         <div class="masonry-item feature ">
-          <div class="title">Detect activity during Rest Phase</div>
+          <div class="title">Detect activity during the Rest Phase</div>
           <div class="img-gif-wrapper">
   <img class="image img-gif-with-preview" src="/img/containers/assets/detect-activity.gif/15904dcab92c8b80ddcb2bdad0419548/detect-activity.jpg" data-src="/assets/detect-activity.gif" alt=""/>
   <div class="dark-preview">
@@ -187,7 +187,7 @@
 </div>
 
           <div class="description">
-            Be notified if you're still working when you're supposed to be resting
+            Receive alerts if you continue working during your designated rest period
 
             <br/>
             <a class="link" href="/features/detect-activity-during-rest-phase">read more</a>
@@ -205,7 +205,7 @@
 </div>
 
           <div class="description">
-            Ideally for meetings or if you don't want to be distracted at all
+            Perfectly suited for meetings or when you require complete focus without distractions.
 
             <br/>
             <a class="link" href="/features/stop-for-a-while">read more</a>
@@ -223,7 +223,7 @@
 </div>
 
           <div class="description">
-            Easily configure timer's time value if you really need it
+            Effortlessly adjust the timer's duration to your preference.
 
             <br/>
             <a class="link" href="/features/rewind">read more</a>
@@ -241,7 +241,7 @@
 </div>
 
           <div class="description">
-            If you really need this ;)
+            Effortless pausing and resume on demand
 
             <br/>
             <a class="link" href="/features/pause">read more</a>
@@ -259,7 +259,7 @@
 </div>
 
           <div class="description">
-            Still has unfinished chunk of work?
+            Still have unfinished tasks?
 
             <br/>
             <a class="link" href="/features/postpone">read more</a>
@@ -277,7 +277,7 @@
 </div>
 
           <div class="description">
-            Easily grant Accessibility permission if you want to use the Auto mode
+            Quickly enable Accessibility permission to utilize the Auto mode
 
             <br/>
             <a class="link" href="/features/accessibility-helper">read more</a>
@@ -295,7 +295,7 @@
 </div>
 
           <div class="description">
-            Ultra-fast extra time by one click!
+            Instantly add extra time with a single click!
 
             <br/>
             <a class="link" href="/features/fast-postpone">read more</a>
@@ -313,7 +313,7 @@
 </div>
 
           <div class="description">
-            Another handy way to postpone the timer
+            An additional convenient method to postpone the timer
 
             <br/>
             <a class="link" href="/features/custom-postpone">read more</a>
@@ -331,7 +331,7 @@
 </div>
 
           <div class="description">
-            Just straight into the next phase
+            Proceed directly from the current phase to the subsequent phase.
 
             <br/>
             <a class="link" href="/features/skip">read more</a>
@@ -349,42 +349,7 @@
         <img src="/assets/schema.png" alt="Automato Schema"/>
       </div>
       <div class="col-12 col-md-8 offset-md-2">
-        <ol>
-          <li>
-            <b>Focus phase</b> is the first phase which starts after you launch the app. This phase is typically short
-            and take 15 seconds.
-            During this phase Automato checks if you actively doing something on your computer. And in case if you do –
-            Automato switches to the next phase.
-            But if not, then you return to the start. This phase is needed to prevent accidentally timer starts (hello
-            to cats walking on a keyboard).
-          </li>
-          <li>
-            <b>Work phase</b> is the main phase during which you actively work on your computer for 25 minutes (you can
-            configure this interval in the settings).
-            If Automato detects that you are not active (e.g. not moving your mouse, not typing anything, not scrolling,
-            and so on) then it notifies you first,
-            then (after some time) you will be returned back to the <u>Focus phase</u>.
-          </li>
-          <li>
-            25 minutes went by and now you need to take a break. To be sure that you really stopped working, Automato
-            transitions to the <b>Overwork Phase</b>.
-            This is the shortest phase, but it's very crucial. During this phase, Automato notifies you (by playing
-            music and sending notifications) that you should stop
-            working and take a break (it means, not typing, not moving your mouse, not scrolling, and so on). And when
-            it happens, Automato switches to the next phase.
-          </li>
-          <li>
-            Consider doing something useful and physically active during the <b>Rest Phase</b>, for example, you can go
-            to the kitchen and drink some water, or do 10 squats.
-            During this phase Automato detects if you do some activity on your computer. If you do, then Automato
-            notifies you first, then
-            (after some consistent activity time during Rest Phase) the timer will be postponed, which means you will be
-            returned back to the <u>Work Phase</u> with
-            <code>01:00</code> remaining time. But if you diligently rested for 5 minutes, then it means you returned
-            back to <u>Focus Phase</u> (and the cycle starts again).
-            Automato plays a sound when transitioning to the Focus phase, so most likely won't miss that moment.
-          </li>
-        </ol>
+        <ol><li><p>The <strong>Focus phase</strong> is the first phase that begins once you launch the Automato app. This phase is typically short, lasting approximately 15 seconds. During this phase, Automato checks if you are actively using your computer. If you are, Automato transitions to the next phase. However, if no activity is detected, the app returns to the start of the Focus phase. This phase is designed to prevent accidental timer starts, such as those caused by pets walking on your keyboard.</p></li><li><p>The <strong>Work phase</strong> is the core of your productivity session, where you actively engage with your computer for a 25-minute interval, a duration you can customize in the <a href="/features/preferences">settings</a>. During this phase, Automato vigilantly monitors your activity levels. If it <a href="/features/detect-inactivity-during-work-phase">detects inactivity</a>, such as no mouse movement or typing, it sends an alert before eventually returning you to the <u>Focus phase</u>. This feature ensures that your work sessions are truly productive by encouraging continuous activity.</p></li><li><p>After a productive 25-minute work session, it&#039;s time for a well-deserved break. To ensure you truly disconnect, Automato transitions to the <strong>Overwork Phase</strong>. This brief but vital phase is designed to promote healthy work habits. Automato sends you auditory and visual reminders to stop working and take a break. Once you&#039;ve disengaged from work, Automato transitions to the next phase, ensuring a balanced work-rest cycle.</p></li><li><p>Consider doing something worthwhile and physically active during the <strong>Rest Phase</strong>. For example, you can go to the kitchen, drink water, or do ten squats. During this phase, Automato <a href="/features/detect-activity-during-rest-phase">detects</a> if you are doing some activity on your computer. If you do, then Automato notifies you first, and then (after some consistent activity time during the <u>Rest Phase</u>), the timer will be <a href="/features/postpone">postponed</a>, which means Automato will return you to the <u>Work Phase</u> with 01:00 remaining time. But if you diligently rested for 5 minutes, you returned to the <u>Focus Phase</u> (and the cycle starts again). Automato plays a sound when transitioning to the <u>Focus phase</u>, so most likely won&#039;t miss that moment.</p></li></ol>
       </div>
     </div>
   </div>
@@ -395,9 +360,9 @@
       Contacts and Support
     </h2>
     <p class="text-center">
-      If you have any questions regarding Automato – please write to this email:<br>
+      If you have any questions about Automato, don't hesitate to contact us at:<br>
 <a href="mailto:dmitrii.pechkovskii.tsikorin@gmail.com">dmitrii.pechkovskii.tsikorin@gmail.com</a>.<br>
-We typically respond within 48 hours and will be glad to help you!
+We typically respond within 48 hours and will be happy to assist you.
 
     </p>
   </div>

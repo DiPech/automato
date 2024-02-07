@@ -8,7 +8,7 @@
     "src": "node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2"
   },
   "resources/css/cp.css": {
-    "file": "assets/cp-c42ce534.js",
+    "file": "assets/cp-4ed993c7.js",
     "isEntry": true,
     "src": "resources/css/cp.css"
   },
@@ -18,7 +18,7 @@
     "src": "resources/css/site.css"
   },
   "resources/js/cp.js": {
-    "file": "assets/cp-4ed993c7.js",
+    "file": "assets/cp-c42ce534.js",
     "isEntry": true,
     "src": "resources/js/cp.js"
   },
