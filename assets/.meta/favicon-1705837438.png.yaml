@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Automato macOS Pomodoro Timer'
 size: 23504
 last_modified: 1705837438
 width: 256
