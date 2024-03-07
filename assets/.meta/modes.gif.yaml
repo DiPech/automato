@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'App modes'
 size: 2559153
 last_modified: 1705829922
 width: 696

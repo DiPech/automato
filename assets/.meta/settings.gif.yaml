@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'App Settings'
 size: 1051526
 last_modified: 1705828710
 width: 1268

@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Stop for a while'
 size: 4800438
 last_modified: 1705830960
 width: 752

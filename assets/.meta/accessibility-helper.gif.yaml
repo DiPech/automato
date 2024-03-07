@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Accessibility Helper'
 size: 46341917
 last_modified: 1705831352
 width: 2570

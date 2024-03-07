@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Pause Button'
 size: 1799769
 last_modified: 1705831161
 width: 696

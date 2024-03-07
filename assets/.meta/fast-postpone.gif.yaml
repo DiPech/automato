@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Fast Postpone'
 size: 262880
 last_modified: 1705831412
 width: 380

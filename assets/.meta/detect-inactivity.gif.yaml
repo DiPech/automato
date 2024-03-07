@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Inactivity Detection'
 size: 1989930
 last_modified: 1705829994
 width: 732

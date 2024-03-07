@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Postpone button'
 size: 1840564
 last_modified: 1705831233
 width: 682

@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Activity Detection'
 size: 1462943
 last_modified: 1705830835
 width: 734

@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Custom Postpone'
 size: 3005246
 last_modified: 1705831457
 width: 830
