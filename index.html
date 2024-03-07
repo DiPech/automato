@@ -18,7 +18,8 @@
   
   <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-1705837438.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preload" as="style" href="https://automato.site/build/assets/site-ff737b67.css" /><link rel="modulepreload" href="https://automato.site/build/assets/site-e7362106.js" /><link rel="stylesheet" href="https://automato.site/build/assets/site-ff737b67.css" /><script type="module" src="https://automato.site/build/assets/site-e7362106.js"></script>
+  <meta name="description" content="Home">
+  <link rel="preload" as="style" href="https://automato.site/build/assets/site-d56c86d1.css" /><link rel="modulepreload" href="https://automato.site/build/assets/site-e7362106.js" /><link rel="stylesheet" href="https://automato.site/build/assets/site-d56c86d1.css" /><script type="module" src="https://automato.site/build/assets/site-e7362106.js"></script>
 </head>
 <body class="homepage">
 <!-- Google Tag Manager (noscript) -->
@@ -31,8 +32,8 @@
   <nav class="navbar navbar-expand-lg navbar-light w-100">
     <div class="container px-3">
       <a class="navbar-brand" href="/">
-        <img src="/assets/logo.png" alt="Automato Logo">
-        <h1>Automato</h1>
+        <img src="/assets/logo.png" alt="Automato">
+        <span class="brand-title">Automato</span>
       </a>
       <button class="navbar-toggler offcanvas-nav-btn" type="button"
               data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
@@ -41,8 +42,8 @@
       <div class="offcanvas offcanvas-start offcanvas-nav" style="width: 20rem" id="offcanvasExample">
         <div class="offcanvas-header">
           <a href="/" class="text-inverse offcanvas-title">
-            <img src="/assets/logo.png" alt="Automato Logo">
-            <h1>Automato</h1>
+            <img src="/assets/logo.png" alt="Automato">
+            <span class="brand-title">Automato</span>
           </a>
           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -69,7 +70,7 @@
           <div class="mt-3 mt-lg-0 d-flex align-items-center">
             <a href="https://apps.apple.com/eu/app/automato-pomodoro-timer/id6448658235?mt=12" target="_blank">
               <img class="btn-download" src="/assets/button-download.svg"
-                   alt=""/>
+                   alt="Download Automato on the Mac App Store"/>
             </a>
           </div>
         </div>
@@ -82,11 +83,11 @@
   <div class="row" style="margin-right: 0">
     <div class="col-4 d-none d-md-block">
       <img src="/assets/banner.jpg" class="banner-image"
-           alt="Automato Laptop"/>
+           alt="Automato"/>
     </div>
     <div class="col-md-8 text-center">
       <img src="/assets/logo.png" height="128" class="logo"
-           alt="Automato Logo"/>
+           alt="Automato"/>
       <h1 class="title">Advanced automated<br/>pomodoro timer</h1>
       <p class="subtitle">
         Automato is a pomodoro timer for macOS<br/>
@@ -96,7 +97,7 @@
       </p>
       <a href="https://apps.apple.com/eu/app/automato-pomodoro-timer/id6448658235?mt=12" target="_blank">
         <img class="btn-download" src="/assets/button-download.svg"
-             alt=""/>
+             alt="Download Automato on the Mac App Store"/>
       </a>
     </div>
   </div>
@@ -348,7 +349,7 @@
     <div class="row">
       <div class="col-12">
         <h2>This is how Automato works</h2>
-        <img src="/assets/schema.png" alt="Automato Schema"/>
+        <img src="/assets/schema.png" alt="Automato: how it works"/>
       </div>
       <div class="col-12 col-md-8 offset-md-2">
         <ol><li><p>The <strong>Focus phase</strong> is the first phase that begins once you launch the Automato app. This phase is typically short, lasting approximately 15 seconds. During this phase, Automato checks if you are actively using your computer. If you are, Automato transitions to the next phase. However, if no activity is detected, the app returns to the start of the Focus phase. This phase is designed to prevent accidental timer starts, such as those caused by pets walking on your keyboard.</p></li><li><p>The <strong>Work phase</strong> is the core of your productivity session, where you actively engage with your computer for a 25-minute interval, a duration you can customize in the <a href="/features/preferences">settings</a>. During this phase, Automato vigilantly monitors your activity levels. If it <a href="/features/detect-inactivity-during-work-phase">detects inactivity</a>, such as no mouse movement or typing, it sends an alert before eventually returning you to the <u>Focus phase</u>. This feature ensures that your work sessions are truly productive by encouraging continuous activity.</p></li><li><p>After a productive 25-minute work session, it&#039;s time for a well-deserved break. To ensure you truly disconnect, Automato transitions to the <strong>Overwork Phase</strong>. This brief but vital phase is designed to promote healthy work habits. Automato sends you auditory and visual reminders to stop working and take a break. Once you&#039;ve disengaged from work, Automato transitions to the next phase, ensuring a balanced work-rest cycle.</p></li><li><p>Consider doing something worthwhile and physically active during the <strong>Rest Phase</strong>. For example, you can go to the kitchen, drink water, or do ten squats. During this phase, Automato <a href="/features/detect-activity-during-rest-phase">detects</a> if you are doing some activity on your computer. If you do, then Automato notifies you first, and then (after some consistent activity time during the <u>Rest Phase</u>), the timer will be <a href="/features/postpone">postponed</a>, which means Automato will return you to the <u>Work Phase</u> with 01:00 remaining time. But if you diligently rested for 5 minutes, you returned to the <u>Focus Phase</u> (and the cycle starts again). Automato plays a sound when transitioning to the <u>Focus phase</u>, so most likely won&#039;t miss that moment.</p></li></ol>

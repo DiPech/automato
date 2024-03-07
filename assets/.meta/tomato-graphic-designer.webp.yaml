@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Automato: Beautiful Pomodoro Timer for Graphic Designers'
 size: 461278
 last_modified: 1707387745
 width: 1792

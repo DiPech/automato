@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Automato: Advanced Pomodoro Timer for Data Analytics'
 size: 397228
 last_modified: 1707387823
 width: 1792

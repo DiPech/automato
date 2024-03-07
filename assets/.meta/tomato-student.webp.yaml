@@ -1,4 +1,5 @@
-data: {  }
+data:
+  alt: 'Automato: Convenient Pomodoro Timer for Students'
 size: 323484
 last_modified: 1707401926
 width: 1792
